@@ -1,3 +1,3 @@
-FROM jakkn/autobuild-base
+FROM jakkn/autobuild-main
 LABEL maintainer="jakobknutsen@gmail.com"
-RUN echo "echo \"build-slim-1.0.0\"" >> version.sh
+RUN sed -i -e 's/build-/build-slim-/g' version.sh
