@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --build-arg IMAGE=$DOCKER_REPO --build-arg TAG=$SOURCE_COMMIT -f $DOCKERFILE_PATH -t $IMAGE_NAME
+docker build --build-arg IMAGE=$DOCKER_REPO --build-arg TAG=$SOURCE_COMMIT -f $DOCKERFILE_PATH -t $IMAGE_NAME .
