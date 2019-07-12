@@ -1,0 +1,8 @@
+#!/bin/bash
+TAG="$SOURCE_COMMIT-slim"
+docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
+docker push $DOCKER_REPO:$TAG
+
+TAG="${SOURCE_COMMIT:0:7}-slim"
+docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
+docker push $DOCKER_REPO:$TAG
