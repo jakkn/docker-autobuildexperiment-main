@@ -5,3 +5,7 @@ docker push $DOCKER_REPO:$SOURCE_COMMIT
 TAG=${SOURCE_COMMIT:0:7}
 docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
 docker push $DOCKER_REPO:$TAG
+
+# Trigger the other builds
+curl -v -H "Content-Type: application/json" --data '{"docker_tag": "latest-full"}' -X POST $CASCADING_BUILD_TRIGGER_URL
+curl -v -H "Content-Type: application/json" --data '{"docker_tag": "latest-slim"}' -X POST $CASCADING_BUILD_TRIGGER_URL
